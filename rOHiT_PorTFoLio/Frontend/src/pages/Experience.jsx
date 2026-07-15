@@ -1,0 +1,163 @@
+import { motion } from "framer-motion";
+import {
+  Briefcase,
+  MapPin,
+  Building2,
+  ExternalLink,
+  ArrowRight,
+} from "lucide-react";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
+
+// import codeAlphaImg from "@/assets/experience/codeAlpha_page.jpg";
+// import bharatInternImg from "@/assets/experience/bharatIntern_page.jpg";
+// import codeClauseImg from "@/assets/experience/codeClause_page.jpg";
+// import oasisInfobyteImg from "@/assets/experience/oasisInfobyte_page.jpg";
+// import codeAlphaPdf from "@/assets/files/experience_pdf/codeAlpha.pdf";
+// import bharatInternPdf from "@/assets/files/experience_pdf/bharatIntern.pdf";
+// import codeClausePdf from "@/assets/files/experience_pdf/codeClause.pdf";
+// import oasisInfobytePdf from "@/assets/files/experience_pdf/oasisInfobyte.pdf";
+
+const experiences = [
+  {
+    id: 1,
+    title: "Web Application Penetration Testing (WAPT) Intern",
+    company: "Company Name...",
+    location: "Locarion Home , Remote",
+    period: "Joining Time : Jun 2024 - Aug 2024",
+    type: "Internship",
+    // image: Image_Of_Internship ,
+    // certificateUrl: Certificate_PDF_Of_Internship,
+    description: [
+        "Performed Web Application Penetration Testing (WAPT) using Burp Suite and OWASP Top 10 methodologies.",
+        "Identified, validated, and documented security vulnerabilities with actionable remediation recommendations.",
+        ],
+      },
+
+  {
+    id: 2,
+    title: "Mobile Application Penetration Testing (MAPT) Intern",
+   company: "Company Name...",
+    location: "Locarion Home , Remote",
+    period: "Joining Time : Jun 2024 - Aug 2024",
+    type: "Internship",
+    // image: bharatInternImg,
+    // certificateUrl: bharatInternPdf,
+    description: [
+       "Performed Mobile Application Penetration Testing (MAPT) using OWASP Mobile Top 10 methodologies.",
+       "Identified and documented security vulnerabilities with actionable remediation recommendations.",
+    ],
+  },
+  {
+    id: 3,
+    title: "Web & Mobile Application Vulnerability Assessment and Penetration Testing (VAPT) Intern",
+   company: "Company Name...",
+    location: "Locarion Home , Remote",
+    period: "Joining Time : Jun 2024 - Aug 2024",
+    type: "Internship",
+    // image: codeClauseImg,
+    // certificateUrl: codeClausePdf,
+    description: [
+      "Performed Web & Mobile Application VAPT using OWASP Top 10, OWASP Mobile Top 10, and Burp Suite.",
+      "Identified, validated, and documented security vulnerabilities with remediation recommendations.",
+    ],
+  },
+];
+
+
+const Experience = () => {
+  return (
+    <div className="min-h-screen pt-16 sm:pt-20 px-4 max-w-5xl mx-auto pb-16 sm:pb-20">
+      <ScrollAnimation>
+        {/* <h2 className="text-3xl text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl sm:text-4xl mt-3 font-bold mb-2 sm:mb-3 flex items-center gap-3 text-cyan-400"> */}
+          <h2 className="mt-3 mb-2 flex items-center gap-3 font-bold text-cyan-400 text-2xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">
+          <Briefcase className="w-7 h-7 text-xl sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl sm:w-8 sm:h-8 text-cyan-400 " />
+          Professional Experience
+        </h2>
+<hr className="h-px border-0 bg-white/50 hover:bg-cyan-400/90 transition-all duration-300 shadow-[0_0_30px_rgba(34,211,238,0.4)] mt-0 mb-10" />
+      </ScrollAnimation>
+      <div className="space-y-8 sm:space-y-12">
+        {experiences.map((exp) => (
+          <ScrollAnimation key={exp.id}>
+            <div className="group relative bg-gray-800/50 border-cyan-400 border rounded-xl sm:rounded-2xl overflow-hidden backdrop-blur-sm hover:bg-gray-800/70 transition-all ">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr,300px]">
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                    <div className="p-2 sm:p-3 bg-white/10 rounded-lg sm:rounded-xl group-hover:bg-white/20 transition-colors">
+                      <Building2 className="w-6 h-6 sm:w-7 sm:h-7" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl text-yellow-400 sm:text-2xl font-bold mb-1 sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                        {exp.title}
+                      </h3>
+                      <p className="text-gray-400  text-base sm:text-lg text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                        {exp.company}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl gap-2 text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
+                    <MapPin className="w-4 h-4" />
+                    <span>{exp.location}</span>
+                    <span>•</span>
+                    <span>{exp.period}</span>
+                  </div>
+
+                  <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                    {exp.description.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-gray-300 text-sm sm:text-base"
+                      >
+                        <ArrowRight className="w-5 h-5 mt-0.5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-gray-400 flex-shrink-0" />
+                        <span className="leading-relaxed ">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <motion.a
+                    href={exp.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="md:hidden mt-6 text-green-400 inline-flex text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl items-center gap-2 px-6 py-2.5 text-green-400 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all duration-300 text-sm font-medium"
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    View Certificate
+                    <ExternalLink className="w-4 h-4" />
+                  </motion.a>
+                </div>
+
+                <div className="relative hidden md:block">
+                  <div className="absolute inset-0 border border-l border-cyan-400 group-hover:scale-105 transition-transform duration-500">
+                    <img
+                      src={exp.image}
+                      alt={exp.company}
+                      loading="lazy"
+                      width={300}
+                      height={400}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-gray-800/80 to-transparent" />
+                  </div>
+                  <div className="relative h-full flex items-center justify-center ">
+                    <motion.a
+                      href={exp.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-8 py-3 text-green-400 font-bold bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl flex items-center gap-2 transition-all duration-300 hover:scale-105  hover:border-white/20"
+                      whileHover={{ y: -5 }}
+                    >
+                      View Certificate
+                      <ExternalLink className="w-4 h-4" />
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Experience;
