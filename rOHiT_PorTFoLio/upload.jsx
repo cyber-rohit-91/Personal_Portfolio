@@ -1,4 +1,6 @@
-
+git remote add origin https://github.com/cyber-rohit-91/Personal_Portfolio.git
+git branch -M main
+git push -u origin main
 
 
 
